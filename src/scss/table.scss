@@ -64,6 +64,11 @@
     &.selected {
       border: none;
       outline: 2px solid #3c74ff;
+      z-index: 5!important;
+    }
+    
+    &.selectedGroup {
+      background: $group-color;
       z-index: 2;
     }
   }
