@@ -88,6 +88,10 @@ class Dom {
     return this.data.id
   }
 
+  text(text) {
+    this.$el.textContent = text
+  }
+
   focus() {
     this.$el.focus()
     return this
