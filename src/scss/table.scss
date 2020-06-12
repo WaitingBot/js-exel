@@ -64,8 +64,27 @@
     &.selected {
       border: none;
       outline: 2px solid #3c74ff;
-      z-index: 2;
+      outline-offset:-2px;
+      z-index: 5!important;
     }
+    
+    &.selectedGroup {
+      background: $group-color;
+      z-index: 2;
+      &.border_top {
+        border-top: 1px solid #3c74ff;
+      }
+      &.border_bottom {
+        border-bottom-color: #3c74ff;
+      }
+      &.border_left {
+        border-left: 1px solid #3c74ff;
+      }
+      &.border_right {
+        border-right-color: #3c74ff;
+      }
+    }
+    
   }
   
   .col-resize, .row-resize {
