@@ -56,6 +56,13 @@ class Dom {
     })
   }
 
+  getStyles(styles = []) {
+    return styles.reduce((res, s) => {
+      res[s] = this.$el.style[s]
+      return res
+    }, {})
+  }
+
   getCss(style) {
     const st = window.getComputedStyle(this.$el)
     return st.getPropertyValue(style)
@@ -79,6 +86,14 @@ class Dom {
     return this
   }
 
+  attr(name, value) {
+    if (value) {
+      this.$el.setAttribute(name, value)
+      return this
+    }
+    return this.$el.getAttribute(name)
+  }
+
   id(parse) {
     if (parse) {
       const parsed = this.id().split(':')
@@ -91,7 +106,7 @@ class Dom {
   }
 
   text(text) {
-    if (typeof text === 'string') {
+    if (typeof text !== 'undefined') {
       this.$el.textContent = text
       return this
     }
